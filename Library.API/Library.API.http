@@ -1,0 +1,45 @@
+@Library.API_HostAddress = http://localhost:5223
+
+//Create a new book POST
+POST {{Library.API_HostAddress}}/books/
+Content-Type: application/json
+
+{
+	"isbn": "978-0137081014",
+	"title": "The Dirty Coder With Endpoints Structured",
+	"author": "Robert C. Martin",
+	"shortDescription": "In The Clean Coder: A Code of Conduct for Professional Programmers, legendary software expert Robert C. Martin introduces the disciplines, techniques, tools, and practices of true software craftsmanship",
+	"pageCount": 242,
+	"releaseDate": "2011-03-13"
+}
+###
+
+//Get all books
+//books?searchTerm=dirt
+GET {{Library.API_HostAddress}}/books
+Content-Type: application/json
+###
+
+//Get book by isbn
+GET {{Library.API_HostAddress}}/books/978-0137081014
+Content-Type: application/json
+###
+
+//Update book PUT
+PUT {{Library.API_HostAddress}}/books/978-0137081014
+Content-Type: application/json
+
+{
+  "isbn": "978-0137081014",
+  "title": "The Dirty Code",
+  "author": "Robert C. Martin",
+  "shortDescription": "In The Clean Coder: A Code of Conduct for Professional Programmers, legendary software expert Robert C. Martin introduces the disciplines, techniques, tools, and practices of true software craftsmanship",
+  "pageCount": 242,
+  "releaseDate": "2011-05-13"
+}
+###
+
+//Get book by isbn
+DELETE {{Library.API_HostAddress}}/books/978-0137081013
+Content-Type: application/json
+###

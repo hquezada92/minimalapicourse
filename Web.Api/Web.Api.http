@@ -1,0 +1,70 @@
+@Web.Api_HostAddress = http://localhost:5154
+
+#Weather endpoint
+GET {{Web.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+###
+
+#Ok Object endpoint
+GET {{Web.Api_HostAddress}}/ok-object/
+Accept: application/json
+###
+
+#Ok Object endpoint
+GET {{Web.Api_HostAddress}}/slow-request/
+Accept: application/json
+###
+
+#---------------------------------------Route params
+GET {{Web.Api_HostAddress}}/get-params/31
+Accept: application/json
+###
+
+GET {{Web.Api_HostAddress}}/cars/merc
+Accept: application/json
+###
+
+GET {{Web.Api_HostAddress}}/books/1234567891-32
+Accept: application/json
+###
+
+#-----------------------------Query params
+GET {{Web.Api_HostAddress}}/people/search?searchTerm=quez
+Accept: application/json
+###
+
+GET {{Web.Api_HostAddress}}/mix/Alex?queryParam=1
+Accept: application/json
+###
+
+#---------------------------Request body
+POST {{Web.Api_HostAddress}}/people
+Content-Type: application/json
+Accept: application/json
+
+{ "fullName":"Alex Quezada" }
+###
+
+#----------------------------Special params
+GET {{Web.Api_HostAddress}}/httpcontext-1
+Accept: application/json
+###
+
+GET {{Web.Api_HostAddress}}/http?q=erfd&t=ijhd
+Accept: application/json
+###
+
+GET {{Web.Api_HostAddress}}/cancel
+Accept: application/json
+###
+
+#-----------------------------Custom parameter binding
+GET {{Web.Api_HostAddress}}/map-point
+Accept: application/json
+
+1.55,0.43
+###
+
+GET {{Web.Api_HostAddress}}/logging
+Accept: application/json
+###
